@@ -1,5 +1,5 @@
 ﻿//McCormick Fonksiyonu
-//Formül: sin(x+y) + (x+y)^2 - 1.5x + 2.5y +1
+//Formül: sin(x+y) + (x-y)^2 - 1.5x + 2.5y +1
 //Limitler: -1.5 <= x <= 4  &&  -3 <= y <= 4
 //Ramazan Mutlu
 namespace GenetikAlgoritma

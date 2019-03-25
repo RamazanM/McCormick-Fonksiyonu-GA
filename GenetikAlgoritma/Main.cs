@@ -16,6 +16,8 @@ namespace GenetikAlgoritma
             InitializeComponent();
             chart1.Titles.Add("Population");
             chart2.Titles.Add("Elites");
+            startButton.Enabled = false;
+            iterateBtn.Enabled = false;
         }
 
         private void iterateBtn_Click(object sender, EventArgs e)
@@ -46,9 +48,16 @@ namespace GenetikAlgoritma
 
         private void initPopulation_Click(object sender, EventArgs e)
         {
-            AI.crossoverRate = double.Parse(crossoverRateTxt.Text);
-            AI.eliteCount = (int)eliteCountNUD.Value;
-            AI.mutationRate = double.Parse(mutationRateTxt.Text);
+            try
+            {
+                AI.crossoverRate = double.Parse(crossoverRateTxt.Text);
+                AI.eliteCount = (int)eliteCountNUD.Value;
+                AI.mutationRate = double.Parse(mutationRateTxt.Text);
+                if (AI.crossoverRate < 0 || AI.crossoverRate > 1 || AI.mutationRate < 0 || AI.mutationRate > 1) throw new Exception();
+            }
+            catch (Exception x) { MessageBox.Show("Lütfen tüm textboxları doğru değerlerle doldurunuz.\nRate değerleri 0 ile 1 arasında olmalıdır.");return; }
+            startButton.Enabled = true;
+            iterateBtn.Enabled = true;
             this.ai = new AI((int)populationSizeNUD.Value);
             ai.population = ai.population.OrderBy((Kromozom k) => k.Function()).ToList();
             UpdateCharts();
