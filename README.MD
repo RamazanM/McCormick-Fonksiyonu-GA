@@ -9,4 +9,4 @@ Bu projede amacımız McCormick fonksiyonunun ![-1.5 <= x <= 4](https://latex.co
 ![image](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/McCormick_function.pdf/page1-1200px-McCormick_function.pdf.jpg)
 
 ## Projenin Ekran Görüntüsü
-![image](/GenetikAlgoritma/screenshots/screenshot1.png)
+![image](/GenetikAlgoritma/screenshots/screenshot1.PNG)
